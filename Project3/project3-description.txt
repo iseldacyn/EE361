@@ -1,0 +1,27 @@
+First, all of the letters and their frequencies were printed to the screen. This was done using this piece of code:
+
+    lf_cipher = letterFrequency(cipher)
+    lf_cipher_list = list(lf_cipher.items())
+    lf_cipher_list.sort(key=getFreq, reverse=True)
+    print(lf_cipher_list)
+
+The most common letters found were 'y' and 'a'. Then, all words with three letters were found and printed using this code:
+
+    words = cipher.split()
+    threeLetter = sortWords(words, 3)
+    print(threeLetter)
+
+It was found 'ybm' and 'axh' were the two most common words. Either of these could be the words 'THE' or 'AND', so the third most frequent three letter word was looked at. Being 'atm', deductive reasoning was used to determine which word was which. If 'axh' was 'THE', then 'ybm' would be 'AND' and 'atm' would become 'TtD'. Since the only common words in English could be 'TAD', which was impossible because 'A' was already used, the reverse was looked at. If 'ybm' was 'THE' and 'axh' was 'AND', then 'atm' would become 'AtE'. This could possibly be the word 'ARE', so the necessary substitutions were made and the analysis was continued.
+
+From here, the deciphered words were printed to the screen using these lines of code at the end of the program:
+
+    plainText = ''
+    for wrds in cipher:
+        plainText += wrds
+    print(plainText)
+
+Visual analysis was used for many words following this. Since 'R' was already used, 'THErE' had to be 'THESE'. With the letter 'S', words like 'STATEsENTS' and 'STiDENTS' became 'STATEMENTS' and 'STUDENTS'. Then, 'UNcvERScTw' and 'REpUgATcfNS' became 'UNIVERSITY' and 'REGULATIONS'. Finally, 'uLARdSON' became 'CLARKSON', 'nOR' became 'FOR', 'OoN' became 'OWN', 'zENEnIT' became 'BENEFIT', and 'kORTIONS' became 'PORTIONS'. 
+
+The cipher text was then printed back to the screen one final time, and the resulting plain text was as follows:
+
+THESE ARE THE UNIVERSITY REGULATIONS AND OFFICIAL POLICY STATEMENTS FOR UNDERGRADUATE STUDENTS AT CLARKSON UNIVERSITY  STUDENTS  FOR THEIR OWN BENEFIT  SHOULD BE FAMILIAR WITH THIS MATERIAL AND ALSO WITH THE ACADEMIC STANDARDS AND CURRICULUM INFORMATION GIVEN IN THE CLARKSON CATALOG  CERTAIN PORTIONS OF THE CLARKSON REGULATIONS ARE APPLICABLE TO FACULTY  ADMINISTRATION AND STAFF  AS WELL AS VISITORS TO THE UNIVERSITY
